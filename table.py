@@ -104,7 +104,7 @@ def _convert_row_text_as_list(row_text):
     if match:
         lst = [match.group(1)]
 
-    return [i.strip() for i in lst]
+    return [re.sub("^ ","",i.rstrip()) for i in lst]
 
 
 def reformat_table_list(table):
